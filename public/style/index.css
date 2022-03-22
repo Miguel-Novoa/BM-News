@@ -2,6 +2,7 @@ main{
     display: flex;
     flex-flow: row;
     justify-content: center;
+    margin-top: 80px;
 }
 
 #latestArticle{
@@ -18,6 +19,11 @@ main{
     position: relative;
     left: -80px;
     color: var(--fontColor);
+    cursor: pointer;
+}
+
+#latestArticle:hover{
+    opacity: 80%;
 }
 
 #latestArticleImg{
@@ -34,7 +40,7 @@ main{
 #latestArticle h2{
     position: relative;
     left: 10px;
-    font-size: 2rem;
+    font-size: 1.3rem;
     top: 20px;
 }
 
@@ -105,6 +111,11 @@ main{
     border-radius: 7px;
     padding: 10px;
     color: var(--fontColor);
+    cursor: pointer;
+}
+
+#newArticlesArticles article:hover{
+    opacity: 80%;
 }
 
 .newArticleImg{
@@ -147,7 +158,7 @@ main{
 }
 
 .newArticleContent h3{
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: inline-flex;
 }
 

@@ -6,13 +6,13 @@ const generateArticles = (articlesDatas) =>{
                 <div class="articleImg">
                     <img src="${articlesDatas[i].urlToImage}" alt="article image">
                 </div>
-                <p class="date">${convertTime(articlesDatas[i].publishedAt)}</p>
+                <p class="date">${convertDate(articlesDatas[i].publishedAt)}</p>
                 <h2>${articlesDatas[i].title}</h2>
                 <div class="articleFooter">
-                    <p>Lire l'article de ${articlesDatas[i].author}</p>
+                    <p>Lire l'article ${checkIfAuthorNull(articlesDatas[i].author)}</p>
                     <div class="readingTime">
                         <img src="../images/clock.png" alt="clock">
-                        <p>05:00</p>
+                        <p>${determineReadingTime(determineCharsNumber(articlesDatas[i].content))}</p>
                     </div>
                 </div>
             </article>
@@ -20,13 +20,13 @@ const generateArticles = (articlesDatas) =>{
                 <div class="articleImg">
                     <img src="${articlesDatas[i+1].urlToImage}" alt="article image">
                 </div>
-                <p class="date">${convertTime(articlesDatas[i+1].publishedAt)}</p>
+                <p class="date">${convertDate(articlesDatas[i+1].publishedAt)}</p>
                 <h2>${articlesDatas[i+1].title}</h2>
                 <div class="articleFooter">
-                    <p>Lire l'article de ${articlesDatas[i+1].author}</p>
+                    <p>Lire l'article ${checkIfAuthorNull(articlesDatas[i+1].author)}</p>
                     <div class="readingTime">
                         <img src="../images/clock.png" alt="clock">
-                        <p>05:00</p>
+                        <p>${determineReadingTime(determineCharsNumber(articlesDatas[i+1].content))}</p>
                     </div>
                 </div>
             </article>
@@ -34,9 +34,20 @@ const generateArticles = (articlesDatas) =>{
         `
         i++
     };
+
+    let articles = document.querySelectorAll('article');
+    for(let i=0; i<articles.length; i++){
+        articles[i].addEventListener('click', ()=>{
+            sessionStorage.setItem('articleClicked', JSON.stringify(articlesDatas[i]));
+            window.location = './article.html'
+        })
+    }
 };
 
-const convertTime = (time) =>{
-    let convertedTime = time.substring(8,10) + '/' + time.substring(5,7) + '/' + time.substring(0,4);
-    return convertedTime;
-}
+const checkIfAuthorNull = (author) =>{
+    if(author == null){
+        return '';
+    }else{
+        return 'de ' + author;
+    };
+};

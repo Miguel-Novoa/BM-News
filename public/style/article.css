@@ -11,12 +11,6 @@ main h2{
     text-align: center;
 }
 
-#resume{
-    font-size: 1.3rem;
-    width: 800px;
-    text-align: center;
-}
-
 #dateAndTime{
     display: flex;
     flex-flow: row;
@@ -40,13 +34,50 @@ main h2{
 
 #articleImg{
     width: 1000px;
+    border-radius: 7px;
 }
 
-#articleMainText{
+#resume{
     font-size: 1.3rem;
     width: 1000px;
     text-align: left;
     line-height: 2rem;
+}
+
+#articleLink{
+    text-decoration: None;
+}
+
+button{
+    background-color: var(--mainColor);
+    border: 2px solid var(--secondaryColor);
+    color: var(--secondaryColor);
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 200px;
+    height: 50px;
+    border-radius: 7px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--secondaryColor);
+    border: 2px solid var(--mainColor);
+    color: var(--mainColor);
+}
+
+footer{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    color: var(--fontColor);
+    margin-top: 70px;
+}
+
+#disqus_thread{
+    width: 80%;
 }
 
 @media screen and (min-width: 800px) and (max-width: 1000px){
@@ -55,15 +86,11 @@ main h2{
         
     }
     
-    #resume{
-        width: 700px;
-    }
-    
     #articleImg{
         width: 780px;
     }
     
-    #articleMainText{
+    #resume{
         width: 750px;
     }
 }
@@ -73,16 +100,11 @@ main h2{
         font-size: 1.6rem; 
     }
     
-    #resume{
-        width: 450px;
-        font-size: 1.1rem;
-    }
-    
     #articleImg{
         width: 480px;
     }
     
-    #articleMainText{
+    #resume{
         width: 450px;
         font-size: 1.1rem;
     }

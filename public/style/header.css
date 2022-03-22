@@ -17,22 +17,22 @@ header{
     flex-flow: column;
 }
 
-#title{
-    align-self: center;
-    height: 60px;
-    color: var(--secondaryColor);
-}
 h1{
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: var(--mainColor);
+    margin-left: 50px;
 }
 
 nav{
+    position: fixed;
     color: var(--fontColor);
     background-color: var(--secondaryColor);
     height: 50px;
     display: flex;
     flex-flow: row;
     align-items: center;
+    z-index: 1;
+    width: 100%;
 }
 
 nav a{
