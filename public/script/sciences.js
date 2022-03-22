@@ -13,7 +13,6 @@ fetch(req)
         return response.json()
     }).then(function(json) {
         datas = json.articles;
-        console.log(datas);
         generateArticles(datas);
     })
 

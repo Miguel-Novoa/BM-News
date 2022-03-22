@@ -34,7 +34,6 @@ const fetchSciences = fetch(urlSciences)
     }).then(function(json) {
         datasSciences = json.articles;
         let content = datasSciences[0].content
-        console.log(content)
         scienceArt.push(datasSciences[0], datasSciences[1]);
         return scienceArt;
     });

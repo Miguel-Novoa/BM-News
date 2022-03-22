@@ -13,13 +13,6 @@ fetch(req)
         return response.json()
     }).then(function(json) {
         datas = json.articles;
-        let str = datas[2].content.substring(0, 200).split(' ').join('').length
-        let un = datas[2].content.substring(201).split(' ').join('')
-        let deux = un.split('[').join('')
-        let trois = deux.split(']').join('')
-        let quatre = trois.split('chars').join('')
-        let cinq = quatre.split('+').join('')
-        console.log(Number(cinq)+Number(str));
         generateArticles(datas);
     })
 

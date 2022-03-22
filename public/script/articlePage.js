@@ -1,8 +1,6 @@
 let articleDatas = JSON.parse(sessionStorage.getItem('articleClicked'));
 let main = document.querySelector('main');
 
-console.log(articleDatas)
-
 const checkIfAuthorNull =(authorName, sourceName)=>{
     if(authorName == null){
         return sourceName;
